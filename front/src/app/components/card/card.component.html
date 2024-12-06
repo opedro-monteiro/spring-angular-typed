@@ -1,0 +1,28 @@
+<mat-card appearance="outlined" class="container">
+  <mat-card-header class="header">
+    <mat-card-title class="title">{{ book?.titulo }}</mat-card-title>
+    <mat-card-subtitle class="category">{{ book?.categoria?.nome }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="author">
+      <mat-icon>person</mat-icon>
+      <span>{{ book?.autor?.nome }}</span> necessário
+    </div>
+
+    <div class="description">
+      <p>Descrição do book</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer>
+    <button mat-button>
+      <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
+      Curtir
+    </button>
+    <button mat-flat-button>
+      <mat-icon aria-hidden="false" aria-label="share icon" fontIcon="share"></mat-icon>
+      Compartilhar
+    </button>
+  </mat-card-footer>
+</mat-card>

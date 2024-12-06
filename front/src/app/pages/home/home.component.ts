@@ -2,10 +2,12 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { LivroResponseDto } from '../../../model';
 import { LivroControllerService } from '../../../services/livro-controller/livro-controller.service';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CardComponent } from "../../components/card/card.component";
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor],
+  imports: [NgFor, MatSlideToggleModule, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
