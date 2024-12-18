@@ -1,8 +1,9 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { LivroResponseDto } from '../../../model';
-import { LivroControllerService } from '../../../services/livro-controller/livro-controller.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { LivroResponseDto } from '../../../model';
+import { AutorControllerService } from '../../../services/autor-controller/autor-controller.service';
+import { LivroControllerService } from '../../../services/livro-controller/livro-controller.service';
 import { CardComponent } from "../../components/card/card.component";
 
 @Component({
@@ -14,9 +15,12 @@ import { CardComponent } from "../../components/card/card.component";
 export class HomeComponent {
   books: LivroResponseDto[] = [];
 
-  constructor(private readonly livroService: LivroControllerService) { }
+  constructor(
+    private readonly livroService: LivroControllerService,
+  ) { }
 
   ngOnInit() {
+    // this.livroService.
     this.livroService.getAllBooks().subscribe({
       next: (data) => {
         this.books = data; // Salva os dados retornados na variável
@@ -25,6 +29,6 @@ export class HomeComponent {
       error: (error) => {
         console.error('Erro ao buscar livros:', error); // Trata erros
       },
-    });
+    })
   }
 }
