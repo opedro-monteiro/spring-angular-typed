@@ -2,7 +2,6 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LivroResponseDto } from '../../../model';
-import { AutorControllerService } from '../../../services/autor-controller/autor-controller.service';
 import { LivroControllerService } from '../../../services/livro-controller/livro-controller.service';
 import { CardComponent } from "../../components/card/card.component";
 

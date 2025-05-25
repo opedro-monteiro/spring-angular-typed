@@ -18,8 +18,8 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
     MatListModule,
     MatExpansionModule,
     MatButtonModule,
-    SidebarComponent
-],
+    SidebarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
