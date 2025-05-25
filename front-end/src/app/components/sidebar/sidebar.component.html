@@ -1,0 +1,72 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <mat-nav-list class="nav-list">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel-title">
+            <mat-icon aria-hidden="false" aria-label="groups icon" fontIcon="book"></mat-icon>
+            Livros
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLink="/livros/cadastrar">
+          <span class="panel-options"><mat-icon aria-hidden="false" aria-label="groups icon" fontIcon="add"></mat-icon>
+            Cadastrar</span>
+        </a>
+        <a mat-list-item routerLink="/livros/alterar" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="edit icon" fontIcon="edit"></mat-icon>Alterar
+          </span>
+        </a>
+        <a mat-list-item routerLink="/livros/excluir" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="delete icon" fontIcon="delete"></mat-icon>
+            Excluir
+          </span>
+        </a>
+        <a mat-list-item routerLink="/livros" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="list_alt icon" fontIcon="list_alt"></mat-icon>
+            Ver todos
+          </span>
+        </a>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel-title">
+            <mat-icon aria-hidden="false" aria-label="groups icon" fontIcon="groups"></mat-icon>
+            Autores
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLink="/autores/cadastrar">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="add icon" fontIcon="add"></mat-icon>
+            Cadastrar
+          </span>
+        </a>
+        <a mat-list-item routerLink="/autores/alterar" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="edit icon" fontIcon="edit"></mat-icon>
+            Alterar
+          </span>
+        </a>
+        <a mat-list-item routerLink="/autores/excluir" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="delete icon" fontIcon="delete"></mat-icon>
+            Excluir
+          </span>
+        </a>
+        <a mat-list-item routerLink="/autores" class="panel-options">
+          <span class="panel-options">
+            <mat-icon aria-hidden="false" aria-label="list_alt icon" fontIcon="list_alt"></mat-icon>
+            Ver todos
+          </span>
+        </a>
+      </mat-expansion-panel>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

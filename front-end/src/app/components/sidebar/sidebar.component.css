@@ -1,0 +1,36 @@
+.sidenav-container {
+  height: 100vh;
+  background-color: #EAEEF4;
+  border-radius: 0px;
+}
+
+.sidenav {
+  width: 240px;
+  padding: 20px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-title {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.panel-options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.mat-list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
