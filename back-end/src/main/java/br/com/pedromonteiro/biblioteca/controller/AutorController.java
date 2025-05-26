@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,6 +48,13 @@ public class AutorController {
     @GetMapping("listar")
     public ResponseEntity<List<AutorEntity>> getAllAuthors() {
         List<AutorEntity> authors = this.service.getAllAuthors();
+        return ResponseEntity.ok(authors);
+    }
+
+
+    @GetMapping("listar/{id}")
+    public ResponseEntity<Optional<AutorEntity>> getAuthorByID(@PathVariable Long id) {
+        Optional<AutorEntity> authors = this.service.getAuthorById(id);
         return ResponseEntity.ok(authors);
     }
 

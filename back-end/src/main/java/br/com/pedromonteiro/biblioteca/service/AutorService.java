@@ -1,6 +1,7 @@
 package br.com.pedromonteiro.biblioteca.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityNotFoundException;
@@ -28,6 +29,10 @@ public class AutorService {
     public List<AutorEntity> getAllAuthors() {
         return repository.findAll();
 
+    }
+
+    public Optional<AutorEntity> getAuthorById(Long id) {
+        return repository.findById(id);
     }
 
     public AutorEntity updateAuthor(Long id, AutorDto dto) {

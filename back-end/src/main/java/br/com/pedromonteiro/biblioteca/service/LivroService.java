@@ -1,6 +1,7 @@
 package br.com.pedromonteiro.biblioteca.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,10 @@ public class LivroService {
                 .stream()
                 .map(this::convertToDto)
                 .toList();
+    }
+
+    public Optional<LivroEntity> getBookById(Long id) {
+        return bookRepository.findById(id);
     }
 
     private LivroResponseDto convertToDto(LivroEntity bookEntity) {

@@ -14,6 +14,7 @@ import jakarta.validation.Valid;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +49,12 @@ public class LivroController {
     @GetMapping("listar")
     public ResponseEntity<List<LivroResponseDto>> getAllBooks() {
         List<LivroResponseDto> books = this.service.getAllBooks();
+        return ResponseEntity.ok(books);
+    }
+
+    @GetMapping("listar/{id}")
+    public ResponseEntity<Optional<LivroEntity>>  getBookById(@PathVariable Long id) {
+        Optional<LivroEntity> books = this.service.getBookById(id);
         return ResponseEntity.ok(books);
     }
 
