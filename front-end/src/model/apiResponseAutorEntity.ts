@@ -4,10 +4,10 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AutorEntity } from './autorEntity'
+import type { AutorEntity } from './autorEntity';
 
 export interface ApiResponseAutorEntity {
-  data?: AutorEntity
-  message?: string
-  status?: number
+  data?: AutorEntity;
+  message?: string;
+  status?: number;
 }

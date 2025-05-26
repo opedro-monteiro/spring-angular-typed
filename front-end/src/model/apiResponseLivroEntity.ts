@@ -4,10 +4,10 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { LivroEntity } from './livroEntity'
+import type { LivroEntity } from './livroEntity';
 
 export interface ApiResponseLivroEntity {
-  data?: LivroEntity
-  message?: string
-  status?: number
+  data?: LivroEntity;
+  message?: string;
+  status?: number;
 }

@@ -6,7 +6,7 @@
  */
 
 export interface AutorDto {
-  id?: number
-  nacionalidade: string
-  nome: string
+  id?: number;
+  nacionalidade: string;
+  nome: string;
 }

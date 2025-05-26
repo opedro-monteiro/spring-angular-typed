@@ -4,127 +4,134 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import { HttpClient } from '@angular/common/http'
+import {
+  HttpClient
+} from '@angular/common/http'
 import type {
-  HttpResponse as AngularHttpResponse,
   HttpContext,
   HttpEvent,
   HttpHeaders,
   HttpParams,
+  HttpResponse as AngularHttpResponse
 } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
-import type { ApiResponseAutorEntity, AutorDto, AutorEntity } from '../../model'
+import {
+  Injectable
+} from '@angular/core'
+import {
+  Observable
+} from 'rxjs'
+import type {
+  ApiResponseAutorEntity,
+  AutorDto,
+  AutorEntity
+} from '../../model'
+
 
 type HttpClientOptions = {
-  headers?:
-    | HttpHeaders
-    | {
-        [header: string]: string | string[]
-      }
-  context?: HttpContext
-  observe?: any
-  params?:
-    | HttpParams
-    | {
-        [param: string]:
-          | string
-          | number
-          | boolean
-          | ReadonlyArray<string | number | boolean>
-      }
-  reportProgress?: boolean
-  responseType?: any
-  withCredentials?: boolean
-}
+  headers?: HttpHeaders | {
+      [header: string]: string | string[];
+  };
+  context?: HttpContext;
+  observe?: any;
+  params?: HttpParams | {
+    [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
+  };
+  reportProgress?: boolean;
+  responseType?: any;
+  withCredentials?: boolean;
+};
+
+
 
 @Injectable({ providedIn: 'root' })
 export class AutorControllerService {
-  constructor(private http: HttpClient) {}
-  updateAuthor<TData = ApiResponseAutorEntity>(
+  constructor(
+    private http: HttpClient,
+  ) {} updateAuthor<TData = ApiResponseAutorEntity>(
     id: number,
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  updateAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    updateAuthor<TData = ApiResponseAutorEntity>(
     id: number,
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  updateAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    updateAuthor<TData = ApiResponseAutorEntity>(
     id: number,
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  updateAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;updateAuthor<TData = ApiResponseAutorEntity>(
     id: number,
-    autorDto: AutorDto,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+    autorDto: AutorDto, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.put<TData>(
       `http://localhost:3000/api/autores/alterar/${id}`,
-      autorDto,
-      options
-    )
+      autorDto,options
+    );
   }
-  createAuthor<TData = ApiResponseAutorEntity>(
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  createAuthor<TData = ApiResponseAutorEntity>(
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  createAuthor<TData = ApiResponseAutorEntity>(
-    autorDto: AutorDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  createAuthor<TData = ApiResponseAutorEntity>(
-    autorDto: AutorDto,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+ createAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    createAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    createAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;createAuthor<TData = ApiResponseAutorEntity>(
+    autorDto: AutorDto, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.post<TData>(
       `http://localhost:3000/api/autores/incluir`,
-      autorDto,
-      options
-    )
+      autorDto,options
+    );
   }
-  getAllAuthors<TData = AutorEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  getAllAuthors<TData = AutorEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  getAllAuthors<TData = AutorEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  getAllAuthors<TData = AutorEntity[]>(options?: HttpClientOptions): Observable<TData> {
-    return this.http.get<TData>(`http://localhost:3000/api/autores/listar`, options)
+ getAllAuthors<TData = AutorEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    getAllAuthors<TData = AutorEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    getAllAuthors<TData = AutorEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;getAllAuthors<TData = AutorEntity[]>(
+     options?: HttpClientOptions
+  ): Observable<TData>  {
+    return this.http.get<TData>(
+      `http://localhost:3000/api/autores/listar`,options
+    );
   }
-  deleteAuthor<TData = ApiResponseAutorEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  deleteAuthor<TData = ApiResponseAutorEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  deleteAuthor<TData = ApiResponseAutorEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  deleteAuthor<TData = ApiResponseAutorEntity>(
-    id: number,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+ getAuthorByID<TData = AutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    getAuthorByID<TData = AutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    getAuthorByID<TData = AutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;getAuthorByID<TData = AutorEntity>(
+    id: number, options?: HttpClientOptions
+  ): Observable<TData>  {
+    return this.http.get<TData>(
+      `http://localhost:3000/api/autores/listar/${id}`,options
+    );
+  }
+ deleteAuthor<TData = ApiResponseAutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    deleteAuthor<TData = ApiResponseAutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    deleteAuthor<TData = ApiResponseAutorEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;deleteAuthor<TData = ApiResponseAutorEntity>(
+    id: number, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.delete<TData>(
-      `http://localhost:3000/api/autores/remover/${id}`,
-      options
-    )
+      `http://localhost:3000/api/autores/remover/${id}`,options
+    );
   }
-}
+};
 
 export type UpdateAuthorClientResult = NonNullable<ApiResponseAutorEntity>
 export type CreateAuthorClientResult = NonNullable<ApiResponseAutorEntity>
 export type GetAllAuthorsClientResult = NonNullable<AutorEntity[]>
+export type GetAuthorByIDClientResult = NonNullable<AutorEntity>
 export type DeleteAuthorClientResult = NonNullable<ApiResponseAutorEntity>

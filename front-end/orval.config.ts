@@ -10,10 +10,9 @@ export default defineConfig({
       target: 'src/services/biblioteca.ts',
       baseUrl: 'http://localhost:3000',
       clean: true,
-      biome: true,
     },
     input: {
-      target: 'http://localhost:3000/api-docs',
+      target: 'http://localhost:3000/v3/api-docs',
     },
   },
 });

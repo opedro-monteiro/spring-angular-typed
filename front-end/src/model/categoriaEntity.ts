@@ -6,6 +6,6 @@
  */
 
 export interface CategoriaEntity {
-  id?: number
-  nome?: string
+  id?: number;
+  nome?: string;
 }

@@ -6,9 +6,9 @@
  */
 
 export interface LivroDto {
-  autor_id: number
-  categoria_id: number
-  id?: number
-  isbn: string
-  titulo: string
+  autor_id: number;
+  categoria_id: number;
+  id?: number;
+  isbn: string;
+  titulo: string;
 }

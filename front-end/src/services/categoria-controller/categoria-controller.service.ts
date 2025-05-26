@@ -4,131 +4,116 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import { HttpClient } from '@angular/common/http'
+import {
+  HttpClient
+} from '@angular/common/http'
 import type {
-  HttpResponse as AngularHttpResponse,
   HttpContext,
   HttpEvent,
   HttpHeaders,
   HttpParams,
+  HttpResponse as AngularHttpResponse
 } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import {
+  Injectable
+} from '@angular/core'
+import {
+  Observable
+} from 'rxjs'
 import type {
   ApiResponseCategoriaEntity,
   CategoriaDto,
-  CategoriaEntity,
+  CategoriaEntity
 } from '../../model'
 
+
 type HttpClientOptions = {
-  headers?:
-    | HttpHeaders
-    | {
-        [header: string]: string | string[]
-      }
-  context?: HttpContext
-  observe?: any
-  params?:
-    | HttpParams
-    | {
-        [param: string]:
-          | string
-          | number
-          | boolean
-          | ReadonlyArray<string | number | boolean>
-      }
-  reportProgress?: boolean
-  responseType?: any
-  withCredentials?: boolean
-}
+  headers?: HttpHeaders | {
+      [header: string]: string | string[];
+  };
+  context?: HttpContext;
+  observe?: any;
+  params?: HttpParams | {
+    [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
+  };
+  reportProgress?: boolean;
+  responseType?: any;
+  withCredentials?: boolean;
+};
+
+
 
 @Injectable({ providedIn: 'root' })
 export class CategoriaControllerService {
-  constructor(private http: HttpClient) {}
-  updateCategory<TData = ApiResponseCategoriaEntity>(
+  constructor(
+    private http: HttpClient,
+  ) {} updateCategory<TData = ApiResponseCategoriaEntity>(
     id: number,
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  updateCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    updateCategory<TData = ApiResponseCategoriaEntity>(
     id: number,
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  updateCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    updateCategory<TData = ApiResponseCategoriaEntity>(
     id: number,
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  updateCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;updateCategory<TData = ApiResponseCategoriaEntity>(
     id: number,
-    categoriaDto: CategoriaDto,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+    categoriaDto: CategoriaDto, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.put<TData>(
       `http://localhost:3000/api/categoria/alterar/${id}`,
-      categoriaDto,
-      options
-    )
+      categoriaDto,options
+    );
   }
-  createCategory<TData = ApiResponseCategoriaEntity>(
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  createCategory<TData = ApiResponseCategoriaEntity>(
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  createCategory<TData = ApiResponseCategoriaEntity>(
-    categoriaDto: CategoriaDto,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  createCategory<TData = ApiResponseCategoriaEntity>(
-    categoriaDto: CategoriaDto,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+ createCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    createCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    createCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;createCategory<TData = ApiResponseCategoriaEntity>(
+    categoriaDto: CategoriaDto, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.post<TData>(
       `http://localhost:3000/api/categoria/incluir`,
-      categoriaDto,
-      options
-    )
+      categoriaDto,options
+    );
   }
-  getAllCategories<TData = CategoriaEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  getAllCategories<TData = CategoriaEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  getAllCategories<TData = CategoriaEntity[]>(
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  getAllCategories<TData = CategoriaEntity[]>(
-    options?: HttpClientOptions
-  ): Observable<TData> {
-    return this.http.get<TData>(`http://localhost:3000/api/categoria/listar`, options)
+ getAllCategories<TData = CategoriaEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    getAllCategories<TData = CategoriaEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    getAllCategories<TData = CategoriaEntity[]>(
+     options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;getAllCategories<TData = CategoriaEntity[]>(
+     options?: HttpClientOptions
+  ): Observable<TData>  {
+    return this.http.get<TData>(
+      `http://localhost:3000/api/categoria/listar`,options
+    );
   }
-  deleteCategory<TData = ApiResponseCategoriaEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
-  ): Observable<TData>
-  deleteCategory<TData = ApiResponseCategoriaEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
-  ): Observable<AngularHttpResponse<TData>>
-  deleteCategory<TData = ApiResponseCategoriaEntity>(
-    id: number,
-    options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
-  ): Observable<HttpEvent<TData>>
-  deleteCategory<TData = ApiResponseCategoriaEntity>(
-    id: number,
-    options?: HttpClientOptions
-  ): Observable<TData> {
+ deleteCategory<TData = ApiResponseCategoriaEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'body' }
+  ): Observable<TData>;
+    deleteCategory<TData = ApiResponseCategoriaEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'response' }
+  ): Observable<AngularHttpResponse<TData>>;
+    deleteCategory<TData = ApiResponseCategoriaEntity>(
+    id: number, options?: Omit<HttpClientOptions, 'observe'> & { observe?: 'events' }
+  ): Observable<HttpEvent<TData>>;deleteCategory<TData = ApiResponseCategoriaEntity>(
+    id: number, options?: HttpClientOptions
+  ): Observable<TData>  {
     return this.http.delete<TData>(
-      `http://localhost:3000/api/categoria/remover/${id}`,
-      options
-    )
+      `http://localhost:3000/api/categoria/remover/${id}`,options
+    );
   }
-}
+};
 
 export type UpdateCategoryClientResult = NonNullable<ApiResponseCategoriaEntity>
 export type CreateCategoryClientResult = NonNullable<ApiResponseCategoriaEntity>

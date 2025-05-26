@@ -4,10 +4,10 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { CategoriaEntity } from './categoriaEntity'
+import type { CategoriaEntity } from './categoriaEntity';
 
 export interface ApiResponseCategoriaEntity {
-  data?: CategoriaEntity
-  message?: string
-  status?: number
+  data?: CategoriaEntity;
+  message?: string;
+  status?: number;
 }

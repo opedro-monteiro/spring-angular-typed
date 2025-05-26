@@ -6,6 +6,6 @@
  */
 
 export interface CategoriaDto {
-  id?: number
-  nome: string
+  id?: number;
+  nome: string;
 }
